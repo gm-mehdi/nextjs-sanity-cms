@@ -2,6 +2,8 @@ import { client } from "@/app/lib/sanity";
 import { fullBlogCard } from "@/lib/interface";
 import Image from "next/image";
 
+export const revalidate = 30;
+
 async function getData(params: string) {
   const query = `
     *[_type == 'blog' && slug.current == '${params}'] {
